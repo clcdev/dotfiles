@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if ! pgrep -x "waybar" > /dev/null; then
+  waybar &
+  trap "killall waybar" EXIT
+fi
+
+_mk_sums() {
+  md5sum $(find ~/.config/waybar -type f) | awk '{print $1}'
+}
+
+check=$(_mk_sums)
+
+while true; do
+  inotifywait -rqe create,modify,move,delete ~/.config/waybar/
+  sleep 0.1
+  new_check=$(_mk_sums)
+  if [ "$check" != "$new_check" ]; then
+    killall -SIGUSR2 waybar
+    check=$new_check
+  fi
+done
