@@ -5,6 +5,8 @@
 export PATH="$HOME/.local/bin:$PATH"
 export GITHUB_USERNAME="clcdev"
 export EDITOR="helix"
+export SSH_ASKPASS="$HOME/.local/bin/hypr-askpass"
+export SSH_ASKPASS_REQUIRE=prefer
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

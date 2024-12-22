@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fuzzel --dmenu --prompt-only="$@" --password --hide-before-typing
