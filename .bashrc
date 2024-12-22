@@ -29,6 +29,7 @@ alias update='_maybeRefresh always && paru -Su'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias hx='helix'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles-git='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfiles-lazy='/usr/bin/lazygit -g $HOME/dotfiles/ -w $HOME'
 
 PS1='[\u@\h \W]\$ '
