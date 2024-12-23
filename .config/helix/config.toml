@@ -1,0 +1,9 @@
+# Theme
+# theme = "cappuccin-mocha"
+
+[editor]
+line-number = "relative"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
