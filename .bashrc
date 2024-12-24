@@ -12,7 +12,7 @@ export SSH_ASKPASS_REQUIRE=prefer
 [[ $- != *i* ]] && return
 
 if [[ "$(tty)" == "/dev/tty1" ]] && uwsm check may-start; then
-    exec uwsm start hyprland.desktop &>> ~/.config/hypr/last.log
+    exec uwsm start hyprland.desktop
 fi
 
 _maybeRefresh() {

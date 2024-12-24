@@ -1,13 +1,22 @@
 #!/bin/bash
 
-if ! pgrep -x "waybar" > /dev/null; then
-  waybar &
-  trap "killall waybar" EXIT
-fi
-
 _mk_sums() {
   md5sum $(find ~/.config/waybar -type f) | awk '{print $1}'
 }
+
+_waybar_start() {
+  waybar &
+  WAYBAR_PID=$!
+}
+
+if pgrep -x "waybar" > /dev/null; then
+  echo "Waybar already running right now... something else is managing it."
+  exit 1
+fi
+
+_waybar_start
+
+trap 'kill $WAYBAR_PID' EXIT
 
 check=$(_mk_sums)
 
@@ -16,7 +25,12 @@ while true; do
   sleep 0.1
   new_check=$(_mk_sums)
   if [ "$check" != "$new_check" ]; then
-    killall -SIGUSR2 waybar
+    if ps -p "$WAYBAR_PID" > /dev/null; then
+      kill -SIGUSR2 "$WAYBAR_PID"
+    else
+      # In case the waybar dies due to a bad config
+      _waybar_start
+    fi
     check=$new_check
   fi
 done
