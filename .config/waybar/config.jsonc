@@ -1,14 +1,21 @@
-// -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
-  // "height": 30, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  "spacing": 4, // Gaps between modules (4px)
-  // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-left": [
+    "custom/padd",
+    "custom/l_end",
+    "hyprland/workspaces",
+    "custom/r_end",
+    "custom/padd",
+  ],
+  "modules-center": [
+    "custom/padd",
+    "custom/l_end",
+    "clock",
+    "custom/r_end",
+    "custom/padd",
+  ],
   "modules-right": [
+    "custom/padd",
+    "custom/l_end",
     "pulseaudio",
     "network",
     "idle_inhibitor",
@@ -16,6 +23,8 @@
     "battery",
     "tray",
     "custom/power",
+    "custom/r_end",
+    "custom/padd",
   ],
   // Modules configuration
   // "sway/workspaces": {
@@ -52,9 +61,9 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15,
+      "good": 65,
+      "warning": 25,
+      "critical": 10,
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
@@ -117,15 +126,52 @@
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
-    "format": "⏻ ",
+    "format": "{}",
+    "on-click": "~/.local/bin/power-menu.sh",
     "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
-    },
+  },
+
+  // Custom modules for padding
+
+  "custom/l_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/r_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/sl_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/sr_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/rl_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/rr_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/padd": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false,
   },
 }
