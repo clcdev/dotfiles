@@ -1,5 +1,5 @@
 # Theme
-# theme = "cappuccin-mocha"
+theme = "cappuccin-mocha"
 
 [editor]
 line-number = "relative"
@@ -7,3 +7,6 @@ line-number = "relative"
 [editor.whitespace.render]
 space = "all"
 tab = "all"
+
+[editor.indent-guides]
+render = true
