@@ -1,21 +1,7 @@
 {
-  "modules-left": [
-    "custom/padd",
-    "custom/l_end",
-    "hyprland/workspaces",
-    "custom/r_end",
-    "custom/padd",
-  ],
-  "modules-center": [
-    "custom/padd",
-    "custom/l_end",
-    "clock",
-    "custom/r_end",
-    "custom/padd",
-  ],
+  "modules-left": [],
+  "modules-center": ["hyprland/workspaces", "clock"],
   "modules-right": [
-    "custom/padd",
-    "custom/l_end",
     "pulseaudio",
     "network",
     "idle_inhibitor",
@@ -23,26 +9,15 @@
     "battery",
     "tray",
     "custom/power",
-    "custom/r_end",
-    "custom/padd",
   ],
-  // Modules configuration
-  // "sway/workspaces": {
-  //     "disable-scroll": true,
-  //     "all-outputs": true,
-  //     "warp-on-scroll": false,
-  //     "format": "{name}: {icon}",
-  //     "format-icons": {
-  //         "1": "",
-  //         "2": "",
-  //         "3": "",
-  //         "4": "",
-  //         "5": "",
-  //         "urgent": "",
-  //         "focused": "",
-  //         "default": ""
-  //     }
-  // },
+  "hyprland/workspaces": {
+    "format": "",
+    "format-icons": {
+      "default": "",
+    },
+    // "justify": "center",
+    // "align": "center",
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -55,7 +30,6 @@
     "spacing": 10,
   },
   "clock": {
-    // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}",
   },
@@ -128,50 +102,6 @@
   "custom/power": {
     "format": "{}",
     "on-click": "~/.local/bin/power-menu.sh",
-    "tooltip": false,
-  },
-
-  // Custom modules for padding
-
-  "custom/l_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/r_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/sl_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/sr_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/rl_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/rr_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false,
-  },
-
-  "custom/padd": {
-    "format": "  ",
-    "interval": "once",
     "tooltip": false,
   },
 }
