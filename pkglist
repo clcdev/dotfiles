@@ -1,3 +1,4 @@
+ags-hyprpanel-git
 app2unit-git
 brightnessctl
 fuzzel
@@ -11,7 +12,9 @@ pipewire-pulse
 plymouth-theme-catppuccin-macchiato-git
 prettier
 uwsm
-waybar
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
+hyprpicker
+hypridle
+hyprlock
