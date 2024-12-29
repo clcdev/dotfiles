@@ -15,3 +15,6 @@ set -q GITHUB_USERNAME; or set -gx GITHUB_USERNAME clcdev
 set -q EDITOR; or set -gx EDITOR helix
 set -q SSH_ASKPASS; or set -gx SSH_ASKPASS $HOME/.local/bin/hypr-askpass
 set -q SSH_ASKPASS_REQUIRE; or set -gx SSH_ASKPASS_REQUIRE prefer
+
+set -gx MANROFFOPT -c
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
