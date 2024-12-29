@@ -372,7 +372,7 @@
   "theme.bar.border.location": "none",
   "theme.bar.outer_spacing": "0",
   "notifications.position": "top right",
-  "notifications.timeout": 3000,
+  "notifications.timeout": 7000,
   "theme.osd.enable": true,
   "theme.osd.duration": 1500,
   "theme.osd.radius": "8px",
