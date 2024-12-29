@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$HOME/.local/bin/install/makepkg-meta.sh clcdev-dots --no-update --depends="$(sed -z 's/\n/,/g' $HOME/.local/bin/install/pac.lst)"
