@@ -13,7 +13,8 @@ if [ -z "$BRANCH" ]; then
   exit 1
 fi
 
-git clone --bare -b "$BRANCH" -- https://github.com/clcdev/dotfiles $DOTFILES_GIT
+git clone --bare -b "$BRANCH" -- https://github.com/clcdev/dotfiles $DOTFILES_GIT \
+  || (echo "git clone failed! Aborting"; exit 1)
 function dotfiles-git {
    git --git-dir=$DOTFILES_GIT --work-tree=$HOME $@
 }
