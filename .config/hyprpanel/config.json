@@ -2,7 +2,7 @@
   "bar.customModules.updates.pollingInterval": 1440000,
   "theme.font.name": "CommitMono Nerd Font",
   "theme.font.size": "1rem",
-  "scalingPriority": "gdk",
+  "scalingPriority": "hyprland",
   "menus.transition": "crossfade",
   "menus.transitionTime": 200,
   "theme.bar.menus.menu.notifications.scrollbar.color": "#b4befe",
@@ -387,7 +387,7 @@
   "theme.bar.buttons.dashboard.enableBorder": false,
   "bar.workspaces.show_numbered": false,
   "bar.workspaces.show_icons": true,
-  "bar.workspaces.workspaces": 2,
+  "bar.workspaces.workspaces": 3,
   "bar.windowtitle.custom_title": true,
   "theme.bar.buttons.windowtitle.spacing": "8px",
   "bar.volume.label": true,
@@ -402,8 +402,9 @@
   "bar.media.show_active_only": true,
   "menus.clock.weather.enabled": false,
   "menus.clock.time.military": true,
-  "menus.dashboard.controls.enabled": false,
-  "menus.dashboard.shortcuts.enabled": false,
+  "menus.dashboard.controls.enabled": true,
+  "menus.dashboard.shortcuts.enabled": true,
   "menus.dashboard.directories.enabled": false,
-  "menus.power.showLabel": true
+  "menus.power.showLabel": true,
+  "theme.font.label": "CommitMono Nerd Font"
 }
