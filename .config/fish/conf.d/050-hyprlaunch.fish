@@ -1,3 +1,4 @@
-if test "$(tty)" = /dev/tty1 && uwsm check may-start
-    exec uwsm start hyprland.desktop
+if test "$(tty)" = /dev/tty1 && command uwsm check may-start
+    command clear
+    exec uwsm start hyprland.desktop 1>/dev/null
 end
