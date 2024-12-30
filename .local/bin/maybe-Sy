@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+cmd="$@"
+
+if echo "$cmd" | grep -q -E "\s-S"; then
+  syncFile="/run/user/$UID/last_pacman_sync"
+  if echo "$cmd" | grep -q -E "\s-S[^ y]*y" || [ ! -e "$syncFile" ] || [ "$(find $syncFile -mmin +120)" ] ; then
+    touch "$syncFile"
+
+    # remove ys and count them
+    num_ys=0
+    while echo "$cmd" | grep -q -E "\s-S[^ y]*y";
+    do
+      num_ys=$((num_ys+1))
+      cmd=$(echo "$cmd" | sed -E "s/ -S([^ y]*)y/ -S\1/")
+    done
+    # If there's more than one y, we should go ahead and do a forced refresh (-Syy)
+    if [[ num_ys -gt 1 ]]; then
+      paru -Syy
+    else
+      paru -Sy
+    fi
+  fi
+else
+  echo "No -S found, so ... yeah"
+fi
+
+$cmd
+exit $?
