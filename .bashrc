@@ -7,6 +7,7 @@ export GITHUB_USERNAME="clcdev"
 export EDITOR="helix"
 export SSH_ASKPASS="$HOME/.local/bin/hypr-askpass"
 export SSH_ASKPASS_REQUIRE=prefer
+export DOTFILES_GIT="$HOME/.local/dotfiles-git"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -20,7 +21,7 @@ alias update='maybe-Sy paru -Syu'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias hx='helix'
-alias dotfiles-git='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-alias dotfiles-lazy='/usr/bin/lazygit -g $HOME/dotfiles/ -w $HOME'
+alias dotfiles-git='/usr/bin/git --git-dir=$DOTFILES_GIT --work-tree=$HOME'
+alias dotfiles-lazy='/usr/bin/lazygit -g $DOTFILES_GIT -w $HOME'
 
 PS1='[\u@\h \W]\$ '
