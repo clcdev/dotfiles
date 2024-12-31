@@ -363,7 +363,7 @@
   "theme.bar.buttons.modules.hypridle.icon_background": "#f5c2e7",
   "theme.bar.buttons.modules.hypridle.text": "#f5c2e7",
   "theme.bar.buttons.modules.hypridle.border": "#f5c2e7",
-  "bar.autoHide": "fullscreen",
+  "bar.autoHide": "never",
   "theme.bar.buttons.enableBorders": false,
   "theme.bar.floating": true,
   "theme.bar.buttons.y_margins": "0",
