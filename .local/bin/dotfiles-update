@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+$HOME/.local/bin/dotfiles-pacman-install || (echo "unable to install pacman packages"; exit 1)
+nvim --headless "+Lazy! restore" +qa
