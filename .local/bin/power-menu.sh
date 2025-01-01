@@ -19,6 +19,8 @@ case "$selected_option" in
   systemctl reboot
   ;;
 *Suspend)
+  loginctl lock-session
+  sleep 1
   systemctl suspend
   ;;
 *Logout)
