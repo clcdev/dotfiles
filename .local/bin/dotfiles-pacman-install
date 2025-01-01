@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
 
-$HOME/.local/bin/install/makepkg-meta.sh clcdev-dots --no-update --depends="$(sed -z 's/\n/,/g' $HOME/.local/bin/install/pac.lst)"
+PKG="$(cat $HOME/.local/bin/install/pac.lst | sed 's/\n/ /g')"
+AUR_PKG="$(echo "$PKG" | paru --repo -Sq --print-format="" - 2>&1 | sed 's/error: target not found: //g' - | grep -v "^\$" - )"
+REPO_PKG="$(comm -23 <(echo "$PKG" | tr ' ' '\n' | sort) <(echo "$AUR_PKG" | tr ' ' '\n' | sort))"
+
+# Install repo packages, then AUR packages, then make the actual metapackage
+# This fixes the issue where paru will complain about AUR packages not being found in the repo
+# (yeah, that's why you're there instead of pacman, paru... jeez)
+paru -S --asdeps --needed $REPO_PKG
+paru -S --asdeps --needed $AUR_PKG
+
+$HOME/.local/bin/install/makepkg-meta.sh clcdev-dots --no-update --depends="$(echo $PKG | sed 's/ /,/g')"
