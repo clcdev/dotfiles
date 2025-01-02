@@ -12,7 +12,7 @@ end
 
 # Set up our variables
 set -q GITHUB_USERNAME; or set -gx GITHUB_USERNAME clcdev
-set -q EDITOR; or set -gx EDITOR nvim
+set -q EDITOR; or set -gx EDITOR helix
 set -q SSH_ASKPASS; or set -gx SSH_ASKPASS $HOME/.local/bin/hypr-askpass
 set -q SSH_ASKPASS_REQUIRE; or set -gx SSH_ASKPASS_REQUIRE prefer
 set -q DOTFILES_GIT; or set -gx DOTFILES_GIT $HOME/.local/dotfiles-git
