@@ -1,8 +1,16 @@
-# Theme
-theme = "cappuccin-mocha"
+theme = "catppuccin_chris"
 
 [editor]
 line-number = "relative"
+cursorline = true
+color-modes = true
+rulers = [79, 119]
+bufferline="multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
 
 [editor.whitespace.render]
 space = "all"
@@ -10,3 +18,46 @@ tab = "all"
 
 [editor.indent-guides]
 render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "V"
+
+[keys.normal]
+"A-k" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before"
+]
+"A-j" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_down",
+  "paste_before"
+]
+# Disable navigating with the arrow keys
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
+[keys.insert]
+"C-space" = "completion"
+# Disable navigating with the arrow keys
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
